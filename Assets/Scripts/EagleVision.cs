@@ -5,8 +5,24 @@ using UnityEngine;
 
 public class EagleVision : ICamera
 {
+    private CinemachineVirtualCamera camera;
+
+
     public void SwitchCamera(CinemachineVirtualCamera camera)
     {
-        camera.m_Lens.FieldOfView = 25;
+        this.camera = camera;
+        setPriority();
+    }
+
+
+    private void setPriority()
+    {
+        camera.Priority = 1;
+    }
+
+
+    public void setInActiveCamera(CinemachineVirtualCamera inactiveCamera)
+    {
+        inactiveCamera.Priority = 0;
     }
 }

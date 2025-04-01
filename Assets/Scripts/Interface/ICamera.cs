@@ -5,5 +5,7 @@ using UnityEngine;
 
 public interface ICamera 
 {
-      void SwitchCamera(CinemachineVirtualCamera camera);
+    void SwitchCamera(CinemachineVirtualCamera camera );
+    void setInActiveCamera(CinemachineVirtualCamera camera);
+    
 }
